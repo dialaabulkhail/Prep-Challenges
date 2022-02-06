@@ -17,9 +17,8 @@
 
 function square(arr) {
     // write your code here
-    let result = [];
-    arr.map(element => {
-        result.push(element * element);
+    let result = arr.map(element => {
+        return(element * element);
     })
     return result;
 }
@@ -61,9 +60,8 @@ function square(arr) {
 
 function fullName(arr) {
     // write your code here
-    let result = [];
-    arr.map(element => {
-        result.push(`${element.firstName} ${element.lastName}`);
+    let result = arr.map(element => {
+        return(`${element.firstName} ${element.lastName}`);
 
     })
     return result;
