@@ -15,9 +15,11 @@
 // ------------------------
 
 const oddFiltration = (arr) => {
- return Array.filter(arr => arr%2)    
-}
+    // write your code here
+    let result = arr.filter(element => element % 2 == 1)
+    return result;
 
+}
 
 // 2) ---------------------
 // 
@@ -66,13 +68,24 @@ const oddFiltration = (arr) => {
 //  2- If one of the names is null dont add it to the full name
 // ------------------------
 
-const cvsFiltration = cvs.filter((arr) => {
-    return arr.tech == "JS" && arr.yearsOfExperience > 4
-});
+const cvsFiltration = (arr) => {
+    // write your code here
+    let result = arr.filter(element =>
+        element.yearsOfExperience >= 5 && element.LastName != null)
+    let output = result.map(element => {
+        return {
+            fullName: `${element.firstName} ${element.LastName}`,
+            tech: element.tech
+
+        }
+        //   return  `fullName: ${element.firstName} ${element.LastName} , tech: ${element.tech}`
+    })
+    return output;
+}
 
 // 3) ---------------------
 //
-// Given an array of words filter the names that contains one of the vowels (a, e, i, o, u)
+// Given an array of words filter out the words that contains one of the vowels (a, e, i, o, u)
 
 // EX:
 // ['car', 'boy', 'spy', 'building', 'why', 'dry' ] ==> ['spy', 'why', 'dry']
@@ -80,10 +93,18 @@ const cvsFiltration = cvs.filter((arr) => {
 // ------------------------
 
 const vowelsFiltration = (arr) => {
- return;
-    }
-
-} 
+    // write your code here
+    let result = arr.filter(element => {
+        if (
+            element.includes('a') == false &&
+            element.includes('i') == false &&
+            element.includes('e') == false &&
+            element.includes('u') == false &&
+            element.includes('o') == false)
+            return element;
+    });
+    return result;
+}
 
 // 4) ---------------------
 //
@@ -100,9 +121,10 @@ const vowelsFiltration = (arr) => {
 // ------------------------
 
 const skillComparison = (arr1, arr2) => {
-        return arr2.filter(d => !arr1.includes(d))
+    // write your code here
+    let result = arr1.concat(arr2);
+    let data = result.filter(element =>
+        !arr1.includes(element) +
+        !arr2.includes(element));
+    return data;
 }
-
-
-module.exports = { oddFiltration, cvsFiltration, vowelsFiltration, skillComparison };
-
